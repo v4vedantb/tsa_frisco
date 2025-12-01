@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Blogs, Frisco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="sub-header">
+        <nav>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">
+</button>
+
+            <a href="index.html"><img src="logo.png" class="logo"></a>
+            <div class="nav-links" id="navLinks">
+                
+                <div class="cross-icon" onclick="hideMenu()"></div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="">Blogs</a></li>
+                    <li><a href="highlights.html">Highlights</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="menu-icon-unicode" onclick="showMenu()">&#9776;</div>
+        </nav>
+
+        <!-- --------banner------- -->
+    <section class="blog-content">
+        <div class="banner4">
+            <img src="banner_4.jpg" alt="">
+        </div>
+        <div class="banner-text">
+            <h1>Frisco Insights & Updates</h1>
+            <p>Discover stories, events, and local voices that make our city vibrant.</p>
+        </div>
+    </section> 
+    
+    <section class="blogs-section">
+    <h1>Latest Blogs</h1>
+    <p>Stay informed with the latest news, developments, and stories from Frisco, Texas.</p>
+
+    <div class="blog-row">
+        <!-- Blog 1 -->
+        <div class="blog-card">
+            <h3>8 exciting new things coming to Frisco</h3>
+            <p>Frisco keeps getting better — new parks, entertainment venues, and major developments on the way. Here are 8 of the latest projects that will reshape our city.” If you want a glance at upcoming city‑wide changes, click on the link below.</p>
+            <a href="https://www.thegrovefrisco.com/blog/posts-by-date/2025/january/8-exciting-new-things-coming-to-frisco/?utm_source=chatgpt.com" class="blog-link">Read More →</a>
+        </div>
+
+        <!-- Blog 2 -->
+        <div class="blog-card">
+            <h3>Fall at The Grove Frisco</h3>
+            <p>Here is a spotlight on community engagement, green spaces, trails, and neighborhood‑driven events — showing how The Grove aims to build community connections.” This is a good read on lifestyle, latest news, and community developments/values.</p>
+            <a href="https://www.thegrovefrisco.com/blog/posts-by-date/2025/october/fall-at-the-grove-frisco/?utm_source=chatgpt.com" class="blog-link">Read More →</a>
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="blog-card">
+            <h3>Community, Connection & New Beginnings at The Grove Frisco</h3>
+            <p>We welcomed warmer days with resident‑lifestyle events, and new neighborhoods are taking shape — more amenities, trails, and homes from top builders coming soon.” Great if you’re curious about upcoming community growth.</p>
+            <a href="https://www.thegrovefrisco.com/blog/posts-by-date/2025/july/community-connection-new-beginnings-at-the-grove-frisco/?utm_source=chatgpt.com" class="blog-link">Read More →</a>
+        </div>
+    </div>
+</section>
+    
+<section class="blog-gradient-bg">
+</section>
+
+<!-- ----------Footer-------- -->
+     <section class="footer">
+        <footer>
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <h4>Contact Us</h4>
+            <div class="text-container">
+                <p>George A. Purefoy Municipal Center</p>
+                <p>6101 Frisco Square Boulevard</p>
+                <p>Frisco, Texas 75034</p>
+                <p>Phone: 972-292-5000</p>
+            </div>
+            <h4 class="departments">Departments</h4>
+            <div class="text-container2">
+                <p>City Managers Office</p>
+                <p>Economic Development</p>
+                <p>Frisco Fire</p>
+                <p>Frisco Police</p>
+                <p>Municipal Court</p>
+                <p>Play Frisco</p>
+                <p>Visit Frisco</p>
+            </div>
+            <div class="footer-column follow-column">
+                <h4 class="follow">Follow Us</h4>
+                <div class="text-container3">
+                    <a href="https://www.facebook.com/CityOfFriscoTX" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/cityoffriscotx/" class="fa fa-instagram"></a>
+                    <a href="https://www.youtube.com/user/cityoffriscotx" class="fa fa-youtube"></a>
+                    <a href="https://www.linkedin.com/company/city-of-frisco/" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+            
+        </footer>
+     </section>
+
+<!-- -------Javascript for the menu icon --------- -->
+<script>
+    function showMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.style.right = '0';
+    }
+
+    function hideMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.style.right = '-200px';
+    }
+
+    const toggleBtn = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+
+  // load saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.classList.add('light-theme');
+    toggleBtn.textContent = 'Toggle Dark Mode On'; // show moon when in light mode
+  } else {
+    toggleBtn.textContent = 'Toggle Light Mode On'; // show sun when in dark mode
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isLight = root.classList.toggle('light-theme');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggleBtn.textContent = isLight ? 'Toggle Dark Mode On' : 'Toggle Light Mode On';
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>About, Frisco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ------------------ NAVIGATION ------------------ -->
+<section class="sub-header">
+    <nav>
+        <button id="theme-toggle" aria-label="Toggle light/dark mode">
+</button>
+
+        <a href="index.html"><img src="logo.png" class="logo" alt="Frisco Logo"></a>
+
+        <div class="nav-links" id="navLinks">
+            <div class="cross-icon" onclick="hideMenu()"></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="highlights.html">Highlights</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-icon-unicode" onclick="showMenu()">&#9776;</div>
+    </nav>
+
+    <div class="slider-wrapper">
+
+        <div class="slider-text">
+            <h1>Discover Frisco</h1>
+            <p>A thriving North Texas community built on vision, growth, and quality of life.</p>
+            <a href="blogs.html" class="btn1">Read Our Blogs</a>
+        </div>
+
+        <div class="slider" id="slider">
+            <div class="slide"><img src="banner_1.jpg"></div>
+            <div class="slide"><img src="banner_2.jpg"></div>
+            <div class="slide"><img src="banner_3.png"></div>
+        </div>
+
+        <div class="slider-nav">
+            <span onclick="goToSlide(0)" class="dot"></span>
+            <span onclick="goToSlide(1)" class="dot"></span>
+            <span onclick="goToSlide(2)" class="dot"></span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ---------- FOOTER ---------- -->
+<section class="footer">
+    <footer>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <h4>Contact Us</h4>
+        <div class="text-container">
+            <p>George A. Purefoy Municipal Center</p>
+            <p>6101 Frisco Square Boulevard</p>
+            <p>Frisco, Texas 75034</p>
+            <p>Phone: 972-292-5000</p>
+        </div>
+
+        <h4 class="departments">Departments</h4>
+        <div class="text-container2">
+            <p>City Managers Office</p>
+            <p>Economic Development</p>
+            <p>Frisco Fire</p>
+            <p>Frisco Police</p>
+            <p>Municipal Court</p>
+            <p>Play Frisco</p>
+            <p>Visit Frisco</p>
+        </div>
+
+        <div class="footer-column follow-column">
+            <h4 class="follow">Follow Us</h4>
+            <div class="text-container3">
+                <a href="https://www.facebook.com/CityOfFriscoTX" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/cityoffriscotx/" class="fa fa-instagram"></a>
+                <a href="https://www.youtube.com/user/cityoffriscotx" class="fa fa-youtube"></a>
+                <a href="https://www.linkedin.com/company/city-of-frisco/" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- ------------------ NAV JAVASCRIPT (FIXED) ------------------ -->
+<script>
+function showMenu() {
+    document.getElementById("navLinks").style.right = "0";
+}
+
+function hideMenu() {
+    document.getElementById("navLinks").style.right = "-220px";
+}
+</script>
+
+<!-- ---------- SLIDER JS ---------- -->
+<script>
+let index = 0;
+const slider = document.getElementById("slider");
+const dots = document.querySelectorAll(".dot");
+const totalSlides = 3;
+
+function updateDots() {
+    dots.forEach((d) => d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+function goToSlide(i) {
+    index = i;
+    slider.style.transform = `translateX(-${index * 100}vw)`;
+    updateDots();
+}
+
+function autoSlide() {
+    index = (index + 1) % totalSlides;
+    goToSlide(index);
+}
+
+setInterval(autoSlide, 4000);
+updateDots();
+
+const toggleBtn = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+
+  // load saved theme
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    root.classList.add('light-theme');
+    toggleBtn.textContent = 'Toggle Dark Mode On'; // show moon when in light mode
+  } else {
+    toggleBtn.textContent = 'Toggle Light Mode On'; // show sun when in dark mode
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isLight = root.classList.toggle('light-theme');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggleBtn.textContent = isLight ? 'Toggle Dark Mode On' : 'Toggle Light Mode On';
+  });
+</script>
+
+</body>
+</html>

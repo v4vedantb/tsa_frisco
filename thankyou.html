@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Frisco Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ------------------ NAVIGATION ------------------ -->
+<section class="sub-header">
+    <nav>
+        <a href="index.html"><img src="logo.png" class="logo" alt="Frisco Logo"></a>
+
+        <div class="nav-links" id="navLinks">
+            <div class="cross-icon" onclick="hideMenu()"></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="highlights.html">Highlights</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+
+        <div class="menu-icon-unicode" onclick="showMenu()">&#9776;</div>
+    </nav>
+</section>
+
+<!-- ------------------ THANK YOU SECTION ------------------ -->
+<section class="thankyou-section">
+    <div class="checkmark"></div>
+    <h1>Thank You!</h1>
+    <p>Your resource submission has been successfully received. We appreciate your contribution to the Frisco community.</p>
+    <a href="resources.html" class="submit-btn">Back to Resources</a>
+</section>
+
+<!-- ----------Footer-------- -->
+<section class="footer">
+    <footer>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <h4>Contact Us</h4>
+        <div class="text-container">
+            <p>George A. Purefoy Municipal Center</p>
+            <p>6101 Frisco Square Boulevard</p>
+            <p>Frisco, Texas 75034</p>
+            <p>Phone: 972-292-5000</p>
+        </div>
+        <h4 class="departments">Departments</h4>
+        <div class="text-container2">
+            <p>City Managers Office</p>
+            <p>Economic Development</p>
+            <p>Frisco Fire</p>
+            <p>Frisco Police</p>
+            <p>Municipal Court</p>
+            <p>Play Frisco</p>
+            <p>Visit Frisco</p>
+        </div>
+        <div class="footer-column follow-column">
+            <h4 class="follow">Follow Us</h4>
+            <div class="text-container3">
+                <a href="https://www.facebook.com/CityOfFriscoTX" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/cityoffriscotx/" class="fa fa-instagram"></a>
+                <a href="https://www.youtube.com/user/cityoffriscotx" class="fa fa-youtube"></a>
+                <a href="https://www.linkedin.com/company/city-of-frisco/" class="fa fa-linkedin"></a>
+            </div>
+        </div>
+    </footer>
+</section>
+
+<!-- ------------------ JAVASCRIPT ------------------ -->
+<script>
+function showMenu() {
+    document.getElementById('navLinks').style.right = '0';
+}
+
+function hideMenu() {
+    document.getElementById('navLinks').style.right = '-200px';
+}
+</script>
+
+</body>
+</html>
